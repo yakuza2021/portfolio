@@ -1,9 +1,9 @@
-﻿# Portfolio Profesional - yakuza2021
+﻿# Portfolio Profesional - Emi
 
 Este es mi portafolio profesional, diseñado con una estética moderna, minimalista y responsiva. Aquí presento mis proyectos destacados y mis habilidades técnicas.
 
 ## 🚀 Tecnologías Utilizadas
-- **HTML5 Semántico**: Estructura sólida y SEO-friendly.
+- **HTML5 Semántico**: Estructura sólida y optimizada.
 - **Vanilla CSS3**: Diseño personalizado, variables CSS y Flexbox/Grid.
 - **JavaScript (ES6)**: Interactividad y animaciones fluidas.
 - **Google Fonts & FontAwesome**: Tipografía premium e iconografía profesional.
@@ -25,4 +25,4 @@ Si deseas clonar este proyecto y ejecutarlo localmente:
 Puedes ver el portafolio en vivo en: [https://yakuza2021.github.io/portfolio/](https://yakuza2021.github.io/portfolio/)
 
 ---
-Desarrollado por [yakuza2021](https://github.com/yakuza2021)
+Desarrollado por [Emi](https://github.com/yakuza2021)
