@@ -3,70 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emi | Desarrollador Full-Stack</title>
+    <title>Emi | Software Engineer Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-<body class="dark-mode">
-    <nav class="navbar">
+<body class="dark-theme">
+    <div class="blob-container">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <nav class="navbar glass">
         <div class="container">
-            <a href="#" class="logo">EMI<span>.DEV</span></a>
+            <a href="#" class="logo">EMI<span>.SOLUTIONS</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#about">Experiencia</a></li>
+                <li><a href="#projects">Portafolio</a></li>
+                <li><a href="#contact" class="nav-cta">Hablemos</a></li>
             </ul>
-            <div class="menu-btn"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="reveal">Soluciones Digitales <br><span>Escalables y Modernas</span></h1>
-                <p class="reveal">Desarrollador Full Stack especializado en automatización, arquitectura de sistemas y experiencias de usuario de alto impacto.</p>
-                <div class="hero-btns reveal">
-                    <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="#contact" class="btn btn-outline">Contacto</a>
+            <div class="hero-wrapper">
+                <span class="badge">Disponible para nuevos retos</span>
+                <h1 class="hero-title">Ingeniería de Software <br><span class="gradient-text">Sin Límites.</span></h1>
+                <p class="hero-subtitle">Especializado en <span id="typewriter"></span></p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Ver mi trabajo</a>
+                    <a href="#contact" class="btn btn-secondary">Contactar</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="about">
+    <section id="about" class="skills-section">
         <div class="container">
-            <h2 class="section-title">Sobre mí</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Soy un apasionado del desarrollo técnico con un enfoque en crear sistemas que resuelven problemas reales. Mi experiencia abarca desde el backend robusto hasta interfaces fluidas y automatizaciones complejas.</p>
-                    <div class="skills-tags">
-                        <span>PHP</span><span>JavaScript</span><span>SQL</span><span>Linux</span><span>Proxmox</span><span>n8n</span>
-                    </div>
+            <div class="skills-grid">
+                <div class="skill-card glass">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Arquitectura Backend</h3>
+                    <p>Sistemas robustos con PHP y SQL diseñados para la escalabilidad.</p>
+                </div>
+                <div class="skill-card glass">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automatización Pro</h3>
+                    <p>Integración de flujos de trabajo con n8n y gestión de servidores Proxmox.</p>
+                </div>
+                <div class="skill-card glass">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Full-Stack Mindset</h3>
+                    <p>Dominio total desde la infraestructura hasta la interfaz final.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img"><i class="fas fa-school"></i></div>
-                    <div class="project-info">
+            <div class="section-header">
+                <h2 class="section-title">Casos de Éxito</h2>
+                <p>Proyectos que combinan lógica compleja con interfaces de usuario premium.</p>
+            </div>
+            <div class="projects-container">
+                <div class="project-item glass">
+                    <div class="project-content">
+                        <span class="project-category">Fintech / EduTech</span>
                         <h3>Sistema de Pagos Escolares</h3>
-                        <p>Plataforma automatizada para la gestión de facturación, seguimiento de pagos y reportes financieros. Optimización de procesos administrativos mediante bases de datos relacionales.</p>
-                        <div class="project-tags"><span>PHP</span><span>MySQL</span><span>Tailwind</span></div>
+                        <p>Una solución integral para la gestión financiera automatizada, eliminando el error humano en procesos de facturación críticos.</p>
+                        <div class="tech-stack">
+                            <span>PHP</span><span>MySQL</span><span>Tailwind</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img"><i class="fas fa-utensils"></i></div>
-                    <div class="project-info">
-                        <h3>Gestión de Restaurante</h3>
-                        <p>Sistema integral de pedidos y control de inventario en tiempo real. Enfocado en la velocidad operativa y la integridad de los datos en entornos de alta demanda.</p>
-                        <div class="project-tags"><span>JS</span><span>Node.js</span><span>PostgreSQL</span></div>
+                <div class="project-item glass">
+                    <div class="project-content">
+                        <span class="project-category">Management / Real-Time</span>
+                        <h3>Gestión de Restaurante Elite</h3>
+                        <p>Control de inventario y pedidos con latencia cero, optimizado para flujos de trabajo de alta presión.</p>
+                        <div class="tech-stack">
+                            <span>Node.js</span><span>WebSockets</span><span>PostgreSQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,14 +95,14 @@
 
     <footer id="contact">
         <div class="container">
-            <h2>Hablemos de tu próximo proyecto</h2>
-            <p>Disponible para colaboraciones y desarrollos a medida.</p>
-            <div class="social-links">
-                <a href="https://github.com/yakuza2021"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:yakuza2021@users.noreply.github.com"><i class="fas fa-envelope"></i></a>
+            <div class="footer-glass glass">
+                <h2>¿Tienes un proyecto en mente?</h2>
+                <p>Estoy listo para llevar tus ideas al siguiente nivel tecnológico.</p>
+                <div class="social-links">
+                    <a href="https://github.com/yakuza2021" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="mailto:yakuza2021@users.noreply.github.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <p class="copyright">&copy; 2026 Emi. Todos los derechos reservados.</p>
         </div>
     </footer>
 
