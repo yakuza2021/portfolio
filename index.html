@@ -1,164 +1,417 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pablo | Sistemas para negocios y automatización</title>
-<meta name="description" content="Pablo, desarrollador autodidacta en Chile. Construyo sistemas para restaurantes y pymes, bots de WhatsApp con IA y herramientas de automatización.">
-<meta property="og:title" content="Pablo | Sistemas para negocios y automatización">
-<meta property="og:description" content="Sistemas para restaurantes y pymes, bots de WhatsApp con IA y automatización.">
+<title>Pablo | Desarrollo de software y automatización</title>
+<meta name="description" content="Desarrollador de software en Chile. Sistemas para restaurantes y pymes, bots de WhatsApp con IA y automatización de procesos.">
+<meta property="og:title" content="Pablo | Desarrollo de software y automatización">
+<meta property="og:description" content="Sistemas para restaurantes y pymes, bots de WhatsApp con IA y automatización de procesos.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0c12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='34' font-weight='800' text-anchor='middle' fill='white'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0d14; --bg2:#11141f; --card:#151927; --line:#232842;
-  --text:#e8eaf3; --muted:#9aa1bd; --a:#7c5cff; --b:#22d3ee;
+  --bg:#0a0c12; --bg2:#0f121b; --card:#131723; --card2:#181d2c; --line:#222840;
+  --text:#eceef6; --muted:#98a0bb; --a:#7c5cff; --b:#22d3ee; --ok:#34d399;
+  --shadow:0 20px 50px -20px rgba(0,0,0,.6);
+}
+:root[data-theme="light"]{
+  --bg:#f6f7fb; --bg2:#ffffff; --card:#ffffff; --card2:#f0f2f9; --line:#e1e5f0;
+  --text:#12152a; --muted:#5b6382; --a:#5b3df5; --b:#0891b2; --ok:#059669;
+  --shadow:0 20px 50px -25px rgba(30,40,90,.25);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;
-  background-image:radial-gradient(60rem 30rem at 85% -10%,rgba(124,92,255,.18),transparent 60%),radial-gradient(50rem 30rem at -10% 20%,rgba(34,211,238,.10),transparent 60%);
-  background-repeat:no-repeat}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(55rem 30rem at 90% -10%,color-mix(in srgb,var(--a) 22%,transparent),transparent 60%),
+             radial-gradient(45rem 28rem at -10% 25%,color-mix(in srgb,var(--b) 14%,transparent),transparent 60%)}
 a{color:inherit;text-decoration:none}
-.container{width:min(1080px,100% - 32px);margin-inline:auto}
-nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(11,13,20,.7);border-bottom:1px solid var(--line)}
-nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-weight:800;letter-spacing:.5px}.logo span{color:var(--a)}
-nav ul{display:flex;gap:22px;list-style:none;align-items:center;font-size:.92rem;color:var(--muted)}
-nav ul a:hover{color:var(--text)}
-.nav-cta{background:linear-gradient(135deg,var(--a),var(--b));color:#fff!important;padding:8px 16px;border-radius:999px;font-weight:600}
-.hero{padding:96px 0 72px}
-.badge{display:inline-block;border:1px solid var(--line);background:var(--bg2);color:var(--muted);padding:6px 14px;border-radius:999px;font-size:.8rem}
-h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;font-weight:800;margin:20px 0 18px;max-width:18ch}
-.grad{background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:1.1rem;max-width:60ch}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{padding:12px 22px;border-radius:12px;font-weight:600;border:1px solid var(--line);transition:.2s}
-.btn.p{background:linear-gradient(135deg,var(--a),var(--b));border:0;color:#fff}
-.btn:hover{transform:translateY(-2px)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:48px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.stat b{display:block;font-size:1.5rem}.stat span{color:var(--muted);font-size:.85rem}
-section{padding:64px 0}
-.sec-h{margin-bottom:32px}
-.sec-h h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800}
-.sec-h p{color:var(--muted);margin-top:6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;transition:.2s}
-.card:hover{border-color:var(--a);transform:translateY(-3px)}
-.cat{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--b);font-weight:600}
-.card h3{font-size:1.2rem}
-.card p{color:var(--muted);font-size:.95rem;flex:1}
+img,svg{display:block;max-width:100%}
+.container{width:min(1120px,100% - 40px);margin-inline:auto}
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.4) blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.2px}
+.brand .mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#fff;font-size:1rem}
+.menu{display:flex;align-items:center;gap:6px;list-style:none}
+.menu a{padding:8px 14px;border-radius:10px;font-size:.92rem;color:var(--muted);transition:.2s}
+.menu a:hover,.menu a.active{color:var(--text);background:var(--card)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.icon-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.icon-btn:hover{border-color:var(--a)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--a)}
+.btn.primary{border:0;color:#fff;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 10px 30px -10px color-mix(in srgb,var(--a) 70%,transparent)}
+.btn.small{padding:9px 16px;font-size:.88rem}
+
+/* HERO */
+.hero{padding:88px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:999px;font-size:.82rem;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-size:clamp(2.4rem,5.6vw,4.2rem);line-height:1.06;font-weight:800;letter-spacing:-1.5px;margin:22px 0 20px}
+.grad{background:linear-gradient(120deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.12rem;color:var(--muted);max-width:58ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.socials{display:flex;gap:10px;margin-top:28px}
+.socials a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;transition:.2s;color:var(--muted)}
+.socials a:hover{color:var(--text);border-color:var(--a);transform:translateY(-2px)}
+
+/* AVATAR */
+.avatar-wrap{position:relative;justify-self:center;width:min(340px,80%)}
+.ring{position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg,var(--a),var(--b),var(--a));filter:blur(22px);opacity:.55;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar{position:relative;aspect-ratio:1;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--a),var(--b))}
+.avatar .inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--bg2);display:grid;place-items:center}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.chip{position:absolute;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:14px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);font-size:.78rem;font-weight:600;white-space:nowrap}
+.chip.c1{left:-26px;top:14%}.chip.c2{right:-22px;top:50%}.chip.c3{left:2%;bottom:2%}
+.chip i{font-style:normal}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.stat b{display:block;font-size:1.6rem;letter-spacing:-.5px}
+.stat span{color:var(--muted);font-size:.86rem}
+
+/* SECTIONS */
+section{padding:84px 0}
+.eyebrow{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--b);font-weight:600}
+.sec-h{margin-bottom:40px;max-width:640px}
+.sec-h h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;font-weight:800;letter-spacing:-.8px;margin:8px 0 10px}
+.sec-h p{color:var(--muted)}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;transition:.25s}
+.svc:hover{border-color:var(--a);transform:translateY(-4px);box-shadow:var(--shadow)}
+.svc .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--a) 22%,transparent),color-mix(in srgb,var(--b) 18%,transparent));color:var(--b)}
+.svc h3{font-size:1.15rem;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:.95rem}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.proj:hover{border-color:var(--a);transform:translateY(-4px);box-shadow:var(--shadow)}
+.proj.wide{grid-column:span 2;flex-direction:row}
+.shot{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--card2),var(--bg2));border-bottom:1px solid var(--line);padding:18px;display:flex;flex-direction:column}
+.proj.wide .shot{flex:1.1;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line);min-height:280px}
+.win{flex:1;border-radius:12px;border:1px solid var(--line);background:var(--bg2);overflow:hidden;display:flex;flex-direction:column}
+.win .bar{display:flex;gap:6px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line)}
+.win .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.win .bar i:nth-child(1){background:#ff5f57}.win .bar i:nth-child(2){background:#febc2e}.win .bar i:nth-child(3){background:#28c840}
+.win .bar span{margin-left:10px;font-size:.68rem;color:var(--muted)}
+.win .body{flex:1;padding:14px;display:grid;gap:8px;align-content:start}
+.sk{height:10px;border-radius:6px;background:var(--line)}
+.sk.a{background:linear-gradient(90deg,var(--a),var(--b));width:40%}
+.sk.w60{width:60%}.sk.w80{width:80%}.sk.w30{width:30%}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.tile{height:46px;border-radius:8px;background:var(--card2);border:1px solid var(--line)}
+.tile.hot{background:linear-gradient(135deg,color-mix(in srgb,var(--a) 35%,transparent),color-mix(in srgb,var(--b) 25%,transparent))}
+.bubble{padding:8px 12px;border-radius:12px;font-size:.72rem;max-width:78%;background:var(--card2);border:1px solid var(--line)}
+.bubble.me{justify-self:end;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;border:0}
+.proj .info{padding:26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.proj.wide .info{flex:1;justify-content:center;padding:34px}
+.cat{font-size:.72rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--b);font-weight:600}
+.proj h3{font-size:1.35rem;letter-spacing:-.3px}
+.proj p{color:var(--muted);font-size:.95rem;flex:1}
 .tags{display:flex;gap:8px;flex-wrap:wrap}
-.tags span{font-size:.75rem;border:1px solid var(--line);background:var(--bg2);color:var(--muted);padding:3px 10px;border-radius:999px}
-.link{color:var(--a);font-weight:600;font-size:.9rem}
-.soon{color:var(--muted);font-size:.85rem}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.about p{color:var(--muted);margin-bottom:12px}
-.skills{display:flex;flex-wrap:wrap;gap:10px}
-.skills span{background:var(--card);border:1px solid var(--line);padding:8px 14px;border-radius:12px;font-size:.88rem}
-.cta{background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(34,211,238,.10));border:1px solid var(--line);border-radius:24px;padding:48px 28px;text-align:center}
-.cta h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800}
-.cta p{color:var(--muted);margin:10px auto 24px;max-width:52ch}
-footer{padding:28px 0 48px;text-align:center;color:var(--muted);font-size:.85rem}
-@media(max-width:720px){.about{grid-template-columns:1fr}nav ul li:not(:last-child){display:none}.hero{padding-top:64px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.tags span{font-size:.72rem;border:1px solid var(--line);background:var(--bg2);color:var(--muted);padding:4px 11px;border-radius:999px}
+.state{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted)}
+.state.live{color:var(--ok)}
+.link{display:inline-flex;gap:6px;color:var(--a);font-weight:600;font-size:.92rem}
+.link:hover{gap:10px}
+
+/* STACK */
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.grp{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.grp h4{font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:600}
+.grp ul{list-style:none;display:grid;gap:8px;font-size:.93rem}
+.grp li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:2px;background:linear-gradient(135deg,var(--a),var(--b));margin-right:10px;vertical-align:middle}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--b)}
+.step h3{margin:10px 0 6px;font-size:1.05rem}
+.step p{color:var(--muted);font-size:.92rem}
+
+/* CONTACT */
+.cta{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:64px 32px;text-align:center;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--a) 16%,var(--card)),color-mix(in srgb,var(--b) 10%,var(--card)))}
+.cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.8px;max-width:20ch;margin:0 auto 12px;line-height:1.15}
+.cta p{color:var(--muted);max-width:52ch;margin:0 auto 28px}
+.cta .cta-row{justify-content:center;margin-top:0}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:.86rem}
+footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .avatar-wrap{order:-1;width:min(260px,70%)}
+  .services,.steps{grid-template-columns:1fr 1fr}
+  .stack{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .proj.wide{flex-direction:column}.proj.wide .shot{border-right:0;border-bottom:1px solid var(--line);min-height:0;aspect-ratio:16/9}
+}
+@media(max-width:720px){
+  .menu{display:none}
+  .projects,.services,.steps,.stack{grid-template-columns:1fr}
+  .proj.wide{grid-column:auto}
+  .hero{padding-top:48px}section{padding:60px 0}
+  .chip.c1{left:-8px}.chip.c2{right:-8px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<nav><div class="container">
-  <a href="#" class="logo">PABLO<span>.LAB</span></a>
-  <ul>
+
+<nav class="nav"><div class="container">
+  <a href="#inicio" class="brand"><span class="mark">P</span> Pablo</a>
+  <ul class="menu">
+    <li><a href="#servicios">Servicios</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    <li><a href="#stack">Tecnologías</a></li>
+    <li><a href="#proceso">Proceso</a></li>
   </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="theme" aria-label="Cambiar tema" title="Cambiar tema">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <a href="#contacto" class="btn primary small">Hablemos</a>
+  </div>
 </div></nav>
 
-<header class="hero"><div class="container">
-  <span class="badge">Chile · Desarrollador autodidacta</span>
-  <h1>Sistemas que hacen <span class="grad">trabajar solos</span> a los negocios.</h1>
-  <p class="lead">Construyo software para restaurantes y pymes: pedidos y caja, agendas por WhatsApp con IA, publicación automática en redes y herramientas de automatización. Cosas que funcionan en el mundo real, no solo en una demo.</p>
-  <div class="actions">
-    <a href="#proyectos" class="btn p">Ver proyectos</a>
-    <a href="https://github.com/yakuza2021" class="btn">GitHub</a>
+<header class="hero" id="inicio"><div class="container">
+  <div class="hero-grid">
+    <div class="rv">
+      <span class="status"><span class="dot"></span> Disponible para nuevos proyectos</span>
+      <h1>Software a medida que <span class="grad">automatiza</span> tu negocio.</h1>
+      <p class="lead">Soy Pablo, desarrollador en Chile. Diseño y construyo sistemas para restaurantes y pymes: control de operaciones, agendas por WhatsApp con inteligencia artificial y automatización de tareas repetitivas.</p>
+      <div class="cta-row">
+        <a href="#proyectos" class="btn primary">Ver proyectos</a>
+        <a href="#contacto" class="btn">Contactar</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/yakuza2021" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="avatar-wrap rv">
+      <div class="ring"></div>
+      <div class="avatar"><div class="inner">
+        <!-- Reemplazar este SVG por <img src="foto.jpg" alt="Pablo"> cuando haya foto -->
+        <svg viewBox="0 0 200 200" width="100%" height="100%" role="img" aria-label="Avatar de Pablo">
+          <defs>
+            <linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+            <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1f33"/><stop offset="1" stop-color="#0d1019"/></linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#bg)"/>
+          <circle cx="100" cy="78" r="34" fill="url(#ag)" opacity=".95"/>
+          <path d="M34 190c4-38 30-58 66-58s62 20 66 58z" fill="url(#ag)" opacity=".85"/>
+        </svg>
+      </div></div>
+      <span class="chip c1"><i>⚡</i> Automatización</span>
+      <span class="chip c2"><i>💬</i> WhatsApp + IA</span>
+      <span class="chip c3"><i>🍽️</i> Sistemas para restaurantes</span>
+    </div>
   </div>
-  <div class="stats">
-    <div class="stat"><b>PHP · Node</b><span>Backend</span></div>
-    <div class="stat"><b>WhatsApp + IA</b><span>Bots con Claude</span></div>
-    <div class="stat"><b>Web y móvil</b><span>Apps instalables</span></div>
-    <div class="stat"><b>Autodidacta</b><span>Aprendo lo que haga falta</span></div>
+
+  <div class="stats rv">
+    <div class="stat"><b>5+</b><span>Sistemas construidos</span></div>
+    <div class="stat"><b>PHP · Node</b><span>Backend y APIs</span></div>
+    <div class="stat"><b>24/7</b><span>Bots que atienden solos</span></div>
+    <div class="stat"><b>Chile</b><span>Trabajo remoto</span></div>
   </div>
 </div></header>
 
-<section id="proyectos"><div class="container">
-  <div class="sec-h"><h2>Proyectos</h2><p>Una selección de lo que he construido. Más detalle y capturas se irán sumando.</p></div>
-  <div class="grid">
-    <article class="card">
-      <span class="cat">Restaurantes</span>
-      <h3>RestoPRO</h3>
-      <p>Sistema completo para restaurantes: pedidos, mesas, caja y cocina en tiempo real, con instalador para Windows y demo web.</p>
-      <div class="tags"><span>Node.js</span><span>Tiempo real</span><span>Windows</span></div>
-      <a class="link" href="https://demo.appsresto.com" target="_blank" rel="noopener">Ver demo →</a>
+<section id="servicios"><div class="container">
+  <div class="sec-h rv"><span class="eyebrow">Qué hago</span><h2>Soluciones para que tu negocio opere con menos esfuerzo</h2><p>Tres áreas donde puedo ayudarte, desde una idea hasta un sistema funcionando.</p></div>
+  <div class="services">
+    <article class="svc rv">
+      <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+      <h3>Sistemas de gestión</h3>
+      <p>Aplicaciones web y de escritorio para controlar pedidos, caja, alumnos, pagos y reportes. Hechas a la medida de cómo trabaja tu negocio.</p>
     </article>
-    <article class="card">
-      <span class="cat">WhatsApp + IA</span>
-      <h3>Asistente de WhatsApp</h3>
-      <p>Bot que atiende clientes por WhatsApp usando Claude: responde consultas, tiene panel de administración y envía un boletín diario.</p>
-      <div class="tags"><span>Claude API</span><span>Meta Cloud API</span><span>PHP</span></div>
-      <span class="soon">Detalle próximamente</span>
+    <article class="svc rv">
+      <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h3>Bots de WhatsApp con IA</h3>
+      <p>Asistentes que responden consultas, agendan citas y envían recordatorios automáticamente, con panel para que tú los administres.</p>
     </article>
-    <article class="card">
-      <span class="cat">Agendamiento</span>
-      <h3>Asistente para barberías</h3>
-      <p>Agenda de citas por WhatsApp con recordatorios automáticos, panel de gestión y simulador para probar conversaciones.</p>
-      <div class="tags"><span>WhatsApp</span><span>Automatización</span><span>Panel web</span></div>
-      <span class="soon">En desarrollo</span>
-    </article>
-    <article class="card">
-      <span class="cat">Gestión</span>
-      <h3>Sistema de pagos para alumnos</h3>
-      <p>Control de alumnos, pagos, gastos e ingresos con reportes en PDF, exportación y portal para cada alumno.</p>
-      <div class="tags"><span>PHP</span><span>MySQL</span><span>PDF</span></div>
-      <span class="soon">Detalle próximamente</span>
-    </article>
-    <article class="card">
-      <span class="cat">Redes sociales</span>
-      <h3>Publicación automática para pymes</h3>
-      <p>Plataforma de autoservicio para programar y publicar en Instagram y Facebook sin trabajo manual.</p>
-      <div class="tags"><span>Instagram</span><span>Facebook</span><span>Automatización</span></div>
-      <span class="soon">En desarrollo</span>
+    <article class="svc rv">
+      <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+      <h3>Automatización de procesos</h3>
+      <p>Publicación en redes sociales, integraciones entre herramientas y flujos que eliminan el trabajo manual y repetitivo.</p>
     </article>
   </div>
 </div></section>
 
-<section id="sobre-mi"><div class="container">
-  <div class="sec-h"><h2>Sobre mí</h2></div>
-  <div class="about">
-    <div>
-      <p>Soy autodidacta: aprendo la tecnología que cada problema pide y la pongo a trabajar. Me interesa lo que se usa a diario en negocios reales, donde un sistema que falla cuesta dinero.</p>
-      <p>Mi enfoque es simple: resolver una tarea concreta, hacerla fácil de usar y dejarla funcionando.</p>
-    </div>
-    <div class="skills">
-      <span>PHP</span><span>JavaScript</span><span>Node.js</span><span>MySQL / SQLite</span>
-      <span>PostgreSQL</span><span>React Native / Expo</span><span>Supabase</span>
-      <span>APIs de WhatsApp</span><span>Claude API</span><span>Linux / VPS</span>
-      <span>Redes y seguridad</span><span>n8n</span>
-    </div>
+<section id="proyectos"><div class="container">
+  <div class="sec-h rv"><span class="eyebrow">Portafolio</span><h2>Proyectos destacados</h2><p>Una selección de sistemas reales. Iré sumando capturas y casos de estudio.</p></div>
+  <div class="projects">
+
+    <article class="proj wide rv">
+      <div class="shot"><div class="win">
+        <div class="bar"><i></i><i></i><i></i><span class="mono">demo.appsresto.com</span></div>
+        <div class="body">
+          <div class="sk a"></div><div class="sk w80"></div>
+          <div class="tiles"><div class="tile hot"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile hot"></div><div class="tile"></div></div>
+          <div class="sk w60"></div>
+        </div>
+      </div></div>
+      <div class="info">
+        <span class="cat">Restaurantes</span>
+        <h3>RestoPRO</h3>
+        <p>Sistema completo para restaurantes: pedidos, mesas, caja y cocina en tiempo real. Incluye instalador para Windows y una demo web para probarlo.</p>
+        <div class="tags"><span>Node.js</span><span>Tiempo real</span><span>Windows</span><span>Web</span></div>
+        <span class="state live"><span class="dot"></span> Demo disponible</span>
+        <a class="link" href="https://demo.appsresto.com" target="_blank" rel="noopener">Ver demo →</a>
+      </div>
+    </article>
+
+    <article class="proj rv">
+      <div class="shot"><div class="win">
+        <div class="bar"><i></i><i></i><i></i><span class="mono">whatsapp</span></div>
+        <div class="body">
+          <div class="bubble">Hola, ¿tienen hora para mañana?</div>
+          <div class="bubble me">¡Claro! Tengo 10:00 y 16:30 disponibles.</div>
+          <div class="bubble">La de las 16:30, por favor.</div>
+        </div>
+      </div></div>
+      <div class="info">
+        <span class="cat">WhatsApp + IA</span>
+        <h3>Asistente de WhatsApp</h3>
+        <p>Atiende clientes con Claude: responde consultas, cuenta con panel de administración y envía un boletín diario.</p>
+        <div class="tags"><span>Claude API</span><span>Meta Cloud API</span><span>PHP</span></div>
+        <span class="state">Caso de estudio próximamente</span>
+      </div>
+    </article>
+
+    <article class="proj rv">
+      <div class="shot"><div class="win">
+        <div class="bar"><i></i><i></i><i></i><span class="mono">agenda</span></div>
+        <div class="body">
+          <div class="sk a"></div>
+          <div class="tiles"><div class="tile"></div><div class="tile hot"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile hot"></div></div>
+          <div class="sk w60"></div>
+        </div>
+      </div></div>
+      <div class="info">
+        <span class="cat">Agendamiento</span>
+        <h3>Asistente para barberías</h3>
+        <p>Agenda de citas por WhatsApp con recordatorios automáticos, panel de gestión y simulador de conversaciones.</p>
+        <div class="tags"><span>WhatsApp</span><span>Recordatorios</span><span>Panel web</span></div>
+        <span class="state">En desarrollo</span>
+      </div>
+    </article>
+
+    <article class="proj rv">
+      <div class="shot"><div class="win">
+        <div class="bar"><i></i><i></i><i></i><span class="mono">pagos</span></div>
+        <div class="body">
+          <div class="sk a"></div><div class="sk w80"></div><div class="sk w60"></div><div class="sk w80"></div><div class="sk w30"></div>
+        </div>
+      </div></div>
+      <div class="info">
+        <span class="cat">Gestión</span>
+        <h3>Sistema de pagos para alumnos</h3>
+        <p>Control de alumnos, pagos, gastos e ingresos con reportes en PDF, exportación y portal para cada alumno.</p>
+        <div class="tags"><span>PHP</span><span>MySQL</span><span>PDF</span></div>
+        <span class="state">Caso de estudio próximamente</span>
+      </div>
+    </article>
+
+    <article class="proj rv">
+      <div class="shot"><div class="win">
+        <div class="bar"><i></i><i></i><i></i><span class="mono">publicador</span></div>
+        <div class="body">
+          <div class="tiles"><div class="tile hot"></div><div class="tile"></div><div class="tile hot"></div></div>
+          <div class="sk a"></div><div class="sk w60"></div>
+        </div>
+      </div></div>
+      <div class="info">
+        <span class="cat">Redes sociales</span>
+        <h3>Publicación automática para pymes</h3>
+        <p>Plataforma de autoservicio para programar y publicar en Instagram y Facebook sin trabajo manual.</p>
+        <div class="tags"><span>Instagram</span><span>Facebook</span><span>Automatización</span></div>
+        <span class="state">En desarrollo</span>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="stack"><div class="container">
+  <div class="sec-h rv"><span class="eyebrow">Tecnologías</span><h2>Con qué construyo</h2><p>Herramientas que uso a diario para llevar un proyecto a producción.</p></div>
+  <div class="stack">
+    <div class="grp rv"><h4>Backend</h4><ul><li>PHP</li><li>Node.js</li><li>APIs REST</li><li>Tiempo real</li></ul></div>
+    <div class="grp rv"><h4>Datos</h4><ul><li>MySQL</li><li>PostgreSQL</li><li>SQLite</li><li>Supabase</li></ul></div>
+    <div class="grp rv"><h4>IA y mensajería</h4><ul><li>Claude API</li><li>WhatsApp Cloud API</li><li>n8n</li><li>Automatización</li></ul></div>
+    <div class="grp rv"><h4>Infraestructura</h4><ul><li>Linux y VPS</li><li>Redes y seguridad</li><li>Despliegue web</li><li>Expo / React Native</li></ul></div>
+  </div>
+</div></section>
+
+<section id="proceso"><div class="container">
+  <div class="sec-h rv"><span class="eyebrow">Cómo trabajo</span><h2>Un proceso simple y transparente</h2></div>
+  <div class="steps">
+    <div class="step rv"><h3>Entender</h3><p>Conversamos sobre cómo funciona tu negocio y qué te quita más tiempo.</p></div>
+    <div class="step rv"><h3>Diseñar</h3><p>Defino una solución concreta y te muestro cómo se verá antes de construirla.</p></div>
+    <div class="step rv"><h3>Construir</h3><p>Desarrollo por etapas, con entregas que puedes probar desde el inicio.</p></div>
+    <div class="step rv"><h3>Acompañar</h3><p>Lo dejo funcionando, te enseño a usarlo y sigo disponible para mejoras.</p></div>
   </div>
 </div></section>
 
 <section id="contacto"><div class="container">
-  <div class="cta">
+  <div class="cta rv">
     <h2>¿Tienes un proceso que quieras automatizar?</h2>
     <p>Cuéntame qué necesita tu negocio y vemos cómo resolverlo.</p>
-    <div class="actions" style="justify-content:center">
-      <a href="https://github.com/yakuza2021" class="btn p">Escríbeme en GitHub</a>
+    <div class="cta-row">
+      <a href="https://github.com/yakuza2021" class="btn primary" target="_blank" rel="noopener">Escríbeme en GitHub</a>
+      <a href="#proyectos" class="btn">Ver proyectos</a>
     </div>
   </div>
 </div></section>
 
-<footer><div class="container">&copy; 2026 Pablo · Chile</div></footer>
+<footer><div class="container">
+  <span>&copy; 2026 Pablo · Desarrollo de software</span>
+  <span>Hecho en Chile</span>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n);}catch(e){}
+  });
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('in');});}
+  var links=document.querySelectorAll('.menu a');
+  var secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'));});
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120,cur=-1;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur);});
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
